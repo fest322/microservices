@@ -1,0 +1,7 @@
+FROM python:3.6
+RUN mkdir /usr/src/worker/
+COPY . /usr/src/worker/
+WORKDIR /usr/src/worker/
+EXPOSE 5004
+RUN pip install -r requirements.txt
+CMD ["python", "worker.py"]

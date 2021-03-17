@@ -1,0 +1,7 @@
+FROM python:3.6
+RUN mkdir /usr/src/reporter/
+COPY . /usr/src/reporter/
+WORKDIR /usr/src/reporter/
+EXPOSE 5002
+RUN pip install -r requirements.txt
+CMD ["python", "reporter.py"]

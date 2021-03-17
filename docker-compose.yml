@@ -1,0 +1,38 @@
+version: '3.8'
+services: 
+    app_main:
+        build: ./app_main
+        network_mode: host
+        volumes: 
+            - ./app_main/:/usr/src/app/
+        ports: 
+            - 5000:5000
+    broker:
+        build: ./broker
+        network_mode: host
+        volumes: 
+            - ./broker/:/usr/src/broker/
+        ports: 
+            - 5001:5001
+    db:
+        build: ./db
+        network_mode: host
+        volumes: 
+            - ./db/:/usr/src/db/
+        ports: 
+            - 5003:5003
+    worker:
+        build: ./worker
+        network_mode: host
+        volumes: 
+            - ./worker/:/usr/src/worker/
+        ports: 
+            - 5004:5004
+    reporter:
+        build: ./reporter
+        network_mode: host
+        volumes: 
+            - ./reporter/:/usr/src/reporter/
+        ports: 
+            - 5002:5002
+

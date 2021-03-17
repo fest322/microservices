@@ -1,0 +1,8 @@
+FROM python:3.6
+RUN mkdir /usr/src/broker/
+COPY . /usr/src/broker/
+WORKDIR /usr/src/broker/
+EXPOSE 5001
+ENV PORT=5001
+RUN pip install -r requirements.txt
+CMD ["python", "broker.py"]
